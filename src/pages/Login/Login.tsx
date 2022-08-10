@@ -40,7 +40,7 @@ const Login: React.FC = () => {
                     <IonButton expand='block' className='margin-top' onClick={logar}>
                         Logar
                     </IonButton>
-                    <IonButton expand='block' color="medium">
+                    <IonButton expand='block' color="medium" onClick={()=>{window.location.href="/cadastrar_usuario"}}>
                         Cadstre-se
                     </IonButton>
                 </div>

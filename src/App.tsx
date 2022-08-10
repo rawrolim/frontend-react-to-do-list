@@ -23,6 +23,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import Login from './pages/Login/Login';
 import Lista from './pages/Lista/Lista';
+import CadastrarUsuario from './pages/CadastrarUsuario/CadastrarUsuario';
 
 setupIonicReact();
 
@@ -35,6 +36,9 @@ const App: React.FC = () => (
         </Route>
         <Route path="/lista">
           <Lista />
+        </Route>
+        <Route path="/cadastrar_usuario">
+          <CadastrarUsuario />
         </Route>
         <Route exact path="/">
           <Redirect to="/login" />
