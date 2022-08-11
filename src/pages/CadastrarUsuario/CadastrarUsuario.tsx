@@ -1,7 +1,7 @@
 import { IonButton, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import axios from 'axios';
 import { useState } from 'react';
-import { url } from '../env';
+import { ENV } from '../env';
 import './CadastrarUsuario.css';
 
 const CadastrarUsuario: React.FC = () => {
@@ -16,7 +16,7 @@ const CadastrarUsuario: React.FC = () => {
             password: password
         }
 
-        axios.post(url()+'user',data)
+        axios.post(ENV.URL+'user',data)
             .then(r=>{
                 window.location.href='/';
             })
