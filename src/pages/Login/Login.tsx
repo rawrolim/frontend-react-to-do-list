@@ -2,7 +2,7 @@ import {  IonButton, IonContent, IonInput, IonItem, IonLabel, IonPage, IonTitle 
 import { useState } from 'react';
 import './Login.css';
 import axios from 'axios';
-import { url } from '../env';
+import { ENV } from '../env';
 
 const Login: React.FC = () => {
     const [email,setEmail] = useState('');
@@ -14,7 +14,7 @@ const Login: React.FC = () => {
             password: password
         }
 
-        axios.post(url()+"login",data)
+        axios.post(ENV.URL+"login",data)
             .then(res =>res.data)
             .then(user=>{
                 localStorage.setItem("email",user.email);
