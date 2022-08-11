@@ -1,8 +1,8 @@
 import {  IonButton, IonHeader, IonIcon, IonTitle, IonToolbar } from '@ionic/react';
 import './HeaderComponent.css';
-import { logOutOutline } from "ionicons/icons";
+import { logOutOutline,arrowBackOutline } from "ionicons/icons";
 
-const HeaderComponent: React.FC = () => {
+const HeaderComponent = (props: any) => {
     function logout(){
         localStorage.clear();
         window.location.href="/"
@@ -12,7 +12,18 @@ const HeaderComponent: React.FC = () => {
         <IonHeader>
             <IonToolbar>
                 <IonTitle>
-                    <div className="ion-float-left margin-header ">
+                    <div className="ion-float-left ">   
+                        {props.locale ? 
+                            <IonButton onClick={()=>{window.location.href=props.locale}} fill='clear'>
+                                <IonIcon icon={arrowBackOutline}></IonIcon>
+                            </IonButton>
+                        :
+                            <div></div>
+                        }
+                    
+                    </div>
+
+                    <div className="ion-float-left margin-header ">    
                         {localStorage.getItem("name")}
                     </div>
                 
