@@ -7,7 +7,11 @@ import { ENV } from '../env';
 const Login: React.FC = () => {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
-    
+
+    if(localStorage.getItem('user_id')){
+        window.location.href="/lista";
+    }
+
     function logar(){
         let data = {
             email: email,
